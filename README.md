@@ -1,14 +1,16 @@
 RESTConnection is a PHP class used to make requests to REST APIs easily
 
+# About
+
 The process is as follow :
 
-1- instantiate a RESTConnection object, passing it the general parameters to connect to the REST api of your choice.
+1. instantiate a RESTConnection object, passing it the general parameters to connect to the REST api of your choice.
    ie : base url to the service, credentials, headers (to specify sent and accepted content types for example)
 
-2- Use the method "request()" to send a request to this api, using parameters : url path, (optional) data to send,
+2. Use the method "request()" to send a request to this api, using parameters : url path, (optional) data to send,
    and method (verb, ie : get, post, put...) to use.
 
-3- Get the resulting http status code, body, header, error message
+3. Get the resulting http status code, body, header, error message
 
 
 
@@ -23,12 +25,11 @@ parameters list.
 
 
 
--------------------------------------------
-Examples
--------------------------------------------
+# Examples
 
-1- Get twitter public tweets
+## Get twitter public tweets
 
+```php
 // Initialize the header of our future requests, specifying the format we want to use in request and response (json)
 $requestHeader = array('Accept: application/json', 'Content-Type: application/json');
 // Create the RESTConnection object, for now, no credential needed as we get only public tweets
@@ -45,11 +46,12 @@ else
   // Something went wrong
   var_dump($testAPI->getLastError());
 }
+```
 
--------------------------------------------
 
-2- Post a message to campfire, highlight it and then change the room topic
+## Post a message to campfire, highlight it and then change the room topic
 
+```php
 // Initialize the header of our future requests, specifying the format we want to use in request and response (json)
 $requestHeader = array('Accept: application/json', 'Content-Type: application/json');
 // Create the RESTConnection object, this time, credential are specified
@@ -78,5 +80,8 @@ else
 
 // Issue a PUT request on 'https://your.campfirenow.com/room/your_room_id.json'
 $testAPI->request('room/your_room_id.json', json_encode(array('room' => array('topic' => "this room is not about cats"))), RESTConnection::PUT);
+```
 
+# Credits
 
+This code is partially based on this article : http://www.gen-x-design.com/archives/making-restful-requests-in-php/. Thanks to its author.
