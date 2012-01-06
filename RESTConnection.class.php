@@ -1,15 +1,14 @@
 <?php
 
 
-// Object used to issue RESTs requests
-// based on : http://www.gen-x-design.com/archives/making-restful-requests-in-php/
+// PHP class used to make requests to REST APIs
 class RESTConnection
 {
-  const GET = 0;    // load/retrieve
-  const POST = 1;   // create
-  const PUT = 2;    // update (replacing old entity, removing undefined fields)
+  const GET    = 0; // load/retrieve
+  const POST   = 1; // create
+  const PUT    = 2; // update (replacing old entity, removing undefined fields)
   const DELETE = 3; // delete
-  const PATCH = 4;  // update (modifying fields from old entity)
+  const PATCH  = 4; // update (modifying fields from old entity)
 
   static $acceptedVerbs = array (self::GET, self::POST, self::PUT, self::DELETE, self::PATCH);
 
