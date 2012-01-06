@@ -39,7 +39,7 @@ class RESTConnection
   {
     $this->serviceRequestHeader = $requestHeader;
   }
-  public function getServiceRequestHeader($requestHeader)
+  public function getServiceRequestHeader()
   {
     return $this->serviceRequestHeader;
   }
@@ -48,7 +48,7 @@ class RESTConnection
   {
     $this->serviceRequestUserAgent = $requestUserAgent;
   }
-  public function getServiceRequestUserAgent($requestUserAgent)
+  public function getServiceRequestUserAgent()
   {
     return $this->serviceRequestUserAgent;
   }
@@ -57,7 +57,7 @@ class RESTConnection
   {
     $this->serviceTimeout = $timeout;
   }
-  public function getServiceTimeout($timeout)
+  public function getServiceTimeout()
   {
     return $this->serviceTimeout;
   }
@@ -66,7 +66,7 @@ class RESTConnection
   {
     $this->serviceUrl = $url;
   }
-  public function getServiceUrl($url)
+  public function getServiceUrl()
   {
     return $this->serviceUrl;
   }
